@@ -49,7 +49,7 @@ function tableCars() {
                         </button>
                     </td>
                     <td>
-                        <button onclick="updateCars(${car.id})" class="btn btn-danger">
+                        <button onclick="updateCars(${car.id})" class="btn btn-warning">
                             Editar
                         </button>
                     </td>
@@ -86,11 +86,11 @@ function updateCars(id) {
     const index = cars.findIndex((car) => car.id === id );
 
     //enviando los valores que están dentro del elemento, hacia el formulario para editarlos
-    document.getElementById('brand').innerHTML = index.brand;
-    document.getElementById('model').innerHTML = index.model;
-    document.getElementById('color').innerHTML = index.color;
-    document.getElementById('year').innerHTML = index.year;
-    document.getElementById('price').innerHTML = index.price;
+    document.getElementById('brand').innerHTML = cars[index].brand;
+    document.getElementById('model').innerHTML = cars[index].model;
+    document.getElementById('color').innerHTML = cars[index].color;
+    document.getElementById('year').innerHTML = cars[index].year;
+    document.getElementById('price').innerHTML = cars[index].price;
 }
 
 tableCars();
