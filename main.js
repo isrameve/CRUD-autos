@@ -86,11 +86,11 @@ function updateCars(id) {
     const index = cars.findIndex((car) => car.id === id );
 
     //enviando los valores que están dentro del elemento, hacia el formulario para editarlos
-    document.getElementById('brand').innerHTML = cars[index].brand;
-    document.getElementById('model').innerHTML = cars[index].model;
-    document.getElementById('color').innerHTML = cars[index].color;
-    document.getElementById('year').innerHTML = cars[index].year;
-    document.getElementById('price').innerHTML = cars[index].price;
+    document.getElementById('brand').innerHTML = cars[index].brand.value;
+    document.getElementById('model').innerHTML = cars[index].model.value;
+    document.getElementById('color').innerHTML = cars[index].color.value;
+    document.getElementById('year').innerHTML = cars[index].year.value;
+    document.getElementById('price').innerHTML = cars[index].price.value;
 }
 
 tableCars();
