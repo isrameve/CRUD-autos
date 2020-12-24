@@ -1,0 +1,26 @@
+body {
+    background-color: grey;
+}
+.card {
+    color: white;
+    background-color: #343a40;
+    font-weight: bold;
+}
+.modif-table {
+    padding-top: 20px;
+    border-radius: .25rem;
+    background-color: #343a40;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    overflow-x: scroll;
+}
+.table {
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .table-container {
+        margin-top: 20px;
+        padding: 0;
+    }
+}
