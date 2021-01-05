@@ -64,7 +64,10 @@ function addCar() {
     const color = document.getElementById('color').value;
     const year = document.getElementById('year').value;
     const price = document.getElementById('price').value;
-    const id = cars[cars.length -1].id + 1;
+    const id = 1;
+    if (cars.length > 0) {
+        cars[cars.length -1].id + 1;
+    }
 
     const newCar = {brand, model, color, year, price}
     cars.push(newCar);
