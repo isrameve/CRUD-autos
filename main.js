@@ -32,7 +32,7 @@
 //     }
 // ];
 
-const cars = localStorage.getItem('cars');
+let cars = JSON.parse(localStorage.getItem('cars')) || [];
 
 function tableCars() {
     const container = document.getElementById('container-cars');
@@ -67,7 +67,8 @@ function addCar() {
     const year = document.getElementById('year').value;
     const price = document.getElementById('price').value;
     
-    const id = 1;
+    let id = 1;
+
     if (cars.length > 0) {
         cars[cars.length -1].id + 1;
     }
