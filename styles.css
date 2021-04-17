@@ -17,6 +17,24 @@ body {
     width: 100%;
 }
 
+/* Login page */
+.login-row {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.login {
+    background-color: #343a40;
+    padding: 15px;
+    border-radius: .25rem;
+}
+.login input{
+    width: 100%;
+}
+.login input[type="submit"]{
+    width: 50%;
+}
+
 @media (max-width: 992px) {
     .table-container {
         margin-top: 20px;

@@ -31,7 +31,6 @@
 //         price: 80000000
 //     }
 // ];
-
 let cars = JSON.parse(localStorage.getItem('cars')) || [];
 
 function tableCars() {
