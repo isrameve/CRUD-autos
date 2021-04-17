@@ -5,33 +5,32 @@
 // ● Año
 // ● Precio
 
-// let cars = [
-//     {
-//         id: 1,
-//         brand: "Ford", 
-//         model: "Mustang", 
-//         color: "Gray", 
-//         year: "1960", 
-//         price: 100000000
-//     },
-//     {
-//         id: 2,
-//         brand: "Chevrolet", 
-//         model: "Camaro", 
-//         color: "Yelloy", 
-//         year: "2005", 
-//         price: 95000000
-//     },
-//     {
-//         id: 3,
-//         brand: "Volkswagen", 
-//         model: "e-Golf", 
-//         color: "Silver", 
-//         year: "2019", 
-//         price: 80000000
-//     }
-// ];
-let cars = JSON.parse(localStorage.getItem('cars')) || [];
+let cars = [
+    {
+        id: 1,
+        brand: "Ford", 
+        model: "Mustang", 
+        color: "Gray", 
+        year: "1960", 
+        price: 100000000
+    },
+    {
+        id: 2,
+        brand: "Chevrolet", 
+        model: "Camaro", 
+        color: "Yelloy", 
+        year: "2005", 
+        price: 95000000
+    },
+    {
+        id: 3,
+        brand: "Volkswagen", 
+        model: "e-Golf", 
+        color: "Silver", 
+        year: "2019", 
+        price: 80000000
+    }
+];
 
 function tableCars() {
     const container = document.getElementById('container-cars');
@@ -75,10 +74,8 @@ function addCar() {
     const newCar = {brand, model, color, year, price}
     cars.push(newCar);
 
-    tableCars();
-
-    localStorage.setItem('cars', JSON.stringify(cars));
     document.getElementById('form-cars').reset();
+    tableCars();
 }
 
 function deleteCar(id) {
