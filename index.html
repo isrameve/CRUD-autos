@@ -14,9 +14,9 @@
     <div class="container mt-3">
         <div class="row">
             <!-- Start the form to enter a new Car -->
-            <div class="card col-lg-4">
+            <div id="container-addCar" class="card col-lg-4">
                 <div class="card-body">
-                    <form id="form-cars" onsubmit="event.preventDefault(), addCar()" action="/cars.php">
+                    <form id="form-addCars" onsubmit="event.preventDefault(), addCar()" action="/cars.php">
                         <div class="form-group">
                             <label for="brand">Brand</label>
                             <input type="text" class="form-control" id="brand" placeholder="Enter the Brand" required>
@@ -42,7 +42,7 @@
                             <input type="text" class="form-control" id="price" placeholder="Enter the Price" required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="button-form" type="submit" class="btn btn-primary">Agregar</button>
                     </form>
                 </div>
             </div>

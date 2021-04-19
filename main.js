@@ -40,6 +40,7 @@ function tableCars() {
 
     cars.forEach((car) => {
         html += `<tr>
+                    <td>${car.id}</td>
                     <td>${car.brand}</td>
                     <td>${car.model}</td>
                     <td>${car.color}</td>
@@ -51,8 +52,11 @@ function tableCars() {
                         </button>
                     </td>
                     <td>
-                        <button onclick="updateCars(${car.id})" class="btn btn-warning">
+                        <button id="button-editar${car.id}" onclick="updateCars(${car.id})" class="btn btn-warning">
                             Editar
+                        </button>
+                        <button id="button-listo${car.id}" onclick="addUpdatedCar(${car.id})" class="btn btn-primary d-none">
+                            Listo
                         </button>
                     </td>
                 </tr>`;
@@ -71,7 +75,7 @@ function addCar() {
     const newCar = {id, brand, model, color, year, price}
     cars.push(newCar);
 
-    document.getElementById('form-cars').reset();
+    document.getElementById('form-addCars').reset();
     tableCars();
     increaseId();
 }
@@ -91,6 +95,13 @@ function updateCars(id) {
     //Encontrando el index del elemento
     const index = cars.findIndex((element) => element.id === id );
 
+    const buttonForm = document.getElementById('button-form');
+    const buttonEditar = document.getElementById(`button-editar${id}`);
+    const buttonListo = document.getElementById(`button-listo${id}`);
+    buttonForm.classList.add('d-none');
+    buttonEditar.classList.add('d-none');
+    buttonListo.classList.remove('d-none');
+
     //enviando los valores que están dentro del elemento, hacia el formulario para editarlos
     document.getElementById('brand').value = cars[index].brand;
     document.getElementById('model').value = cars[index].model;
@@ -99,6 +110,26 @@ function updateCars(id) {
     document.getElementById('price').value = cars[index].price;
 
     cars.splice(index, 1);
+    return index;
 }
 
+
+function addUpdatedCar(id) {
+    //Add like a new element, but with the same ID
+    
+    const brand = document.getElementById('brand').value;
+    const model = document.getElementById('model').value;
+    const color = document.getElementById('color').value;
+    const year = document.getElementById('year').value
+    const price = document.getElementById('price').value;
+
+    const newCar = {id, brand, model, color, year, price}
+    cars.push(newCar);
+
+    const buttonForm = document.getElementById('button-form');
+    buttonForm.classList.remove('d-none');
+
+    document.getElementById('form-addCars').reset();
+    tableCars();
+}
 tableCars();
