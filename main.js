@@ -40,7 +40,6 @@ function tableCars() {
 
     cars.forEach((car) => {
         html += `<tr>
-                    <td>${car.id}</td>
                     <td>${car.brand}</td>
                     <td>${car.model}</td>
                     <td>${car.color}</td>
